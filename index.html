@@ -108,7 +108,6 @@
         }
         .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
         .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
 
         .card {
             background: rgba(18, 22, 34, 0.75);
@@ -257,6 +256,19 @@
             z-index: 100;
         }
 
+        /* Lists for Financials */
+        ul.financial-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul.financial-list li {
+            margin-bottom: 8px;
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+            padding-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
             h2 { font-size: 1.5rem; }
@@ -277,7 +289,7 @@
         <section class="slide">
             <span class="badge">Business Proposal</span>
             <h1>The Blindbox Diner</h1>
-            <p class="subtitle">A high-novelty, social-first mystery dining experience.</p>
+            <p class="subtitle">A premium, high-novelty, social-first mystery dining experience.</p>
             
             <div class="unbox-demo" onclick="triggerUnbox()">
                 <div style="font-size: 3rem; margin-bottom: 5px;" id="boxIcon">🎁</div>
@@ -293,7 +305,7 @@
         <section class="slide">
             <span class="badge">Market Opportunity</span>
             <h2>Why This Concept Wins</h2>
-            <p class="subtitle">Tapping into high-margin experiential dining and viral social trends.</p>
+            <p class="subtitle">Premium pricing (RM 90 entry) positions this as an exclusive experiential dining destination.</p>
 
             <div class="grid grid-3">
                 <div class="card">
@@ -305,8 +317,8 @@
                     <p>Quarterly room rotations give diners a fresh reason to return every 3 months.</p>
                 </div>
                 <div class="card">
-                    <h3 style="color: #ff9f43;">💰 High-Margin Upsell</h3>
-                    <p>Fixed RM 45 entry menu opens the door for high-margin signature drinks and room add-ons.</p>
+                    <h3 style="color: #ff9f43;">💰 Strong Unit Economics</h3>
+                    <p>Fixed RM 90 entry menu standardizes OPEX forecasting and opens doors for premium beverage upselling.</p>
                 </div>
             </div>
         </section>
@@ -314,23 +326,23 @@
         <!-- SLIDE 3: Guest Flow -->
         <section class="slide">
             <span class="badge">Customer Journey</span>
-            <h2>The 4-Step Dining Flow</h2>
+            <h2>The Premium Dining Flow</h2>
             <div class="grid grid-2">
                 <div class="card">
                     <h3>1. Entrance & Unboxing</h3>
-                    <p>Guest buys RM 45 ticket at counter and opens a physical box/capsule revealing their room assignment.</p>
+                    <p>Guest pays RM 90 entry at the door and pulls a high-quality physical box revealing their room assignment.</p>
                 </div>
                 <div class="card">
                     <h3>2. Room Entry</h3>
-                    <p>Escorted into 1 of 3 themed rooms featuring immersive soundscapes, scents, and lighting.</p>
+                    <p>Escorted into 1 of 3 themed rooms featuring immersive soundscapes, scents, and intelligent ambient lighting.</p>
                 </div>
                 <div class="card">
-                    <h3>3. Menu Choice</h3>
-                    <p>Selects 1 of 2 curated set meals included with the entry price.</p>
+                    <h3>3. Curated Menu Choice</h3>
+                    <p>Guest selects 1 of 2 premium curated set meals (e.g., Wagyu slices, imported seafood) included in entry.</p>
                 </div>
                 <div class="card">
                     <h3>4. Add-on Upsell</h3>
-                    <p>Servers recommend themed cocktails, desserts, and extra side dishes to boost average spend.</p>
+                    <p>Servers recommend curated cocktails, artisanal desserts, and premium side dishes to boost check averages.</p>
                 </div>
             </div>
         </section>
@@ -344,14 +356,14 @@
             <div class="tab-buttons">
                 <button class="tab-btn active" onclick="switchTab(0)">🏮 Tokyo Izakaya</button>
                 <button class="tab-btn" onclick="switchTab(1)">🎷 Jazz Lounge</button>
-                <button class="tab-btn" onclick="switchTab(2)">🍜 Modern Kopitiam</button>
+                <button class="tab-btn" onclick="switchTab(2)">🍜 Premium Kopitiam</button>
             </div>
 
             <div class="tab-content active" id="tab0">
                 <div class="card">
                     <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Izakaya">
                     <h3>Room 1: Tokyo Night Izakaya</h3>
-                    <p>Neon-lit, energetic ambient alleyway vibe serving yakitori skewers, ramen bowls, and highballs.</p>
+                    <p>Neon-lit ambient alleyway vibe. Premium Set Options: A5 Wagyu Skewers or Miso-Glazed Black Cod.</p>
                 </div>
             </div>
 
@@ -359,59 +371,52 @@
                 <div class="card">
                     <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Jazz Lounge">
                     <h3>Room 2: Midnight Jazz Club</h3>
-                    <p>Dimly lit amber ambiance, smooth jazz vinyl audio, smoked bistro platters, and craft cocktails.</p>
+                    <p>Dim amber lighting and vinyl audio. Premium Set Options: Duck Confit or Truffle Mushroom Risotto.</p>
                 </div>
             </div>
 
             <div class="tab-content" id="tab2">
                 <div class="card">
                     <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Kopitiam">
-                    <h3>Room 3: Elevated Modern Kopitiam</h3>
-                    <p>Nostalgic local aesthetic with a sleek modern twist, serving artisanal noodle bowls and signature teas.</p>
+                    <h3>Room 3: Elevated Heritage Kopitiam</h3>
+                    <p>Nostalgic local aesthetic with a sleek modern twist. Premium Set Options: Jumbo Prawn Noodle Bowl or Nasi Lemak with Lobster Sambal.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 5: Flaws & Interactive Fixes -->
+        <!-- SLIDE 5: CAPEX Estimations -->
         <section class="slide">
-            <span class="badge">Operations Strategy</span>
-            <h2>Solving Operational Hurdles</h2>
-            <p class="subtitle">(Tap cards below to reveal operational solutions)</p>
+            <span class="badge">Initial Investment</span>
+            <h2>Est. Fit-Out & CAPEX Breakdown</h2>
+            <p class="subtitle">Utilizing modular technology (RGB lighting, projectors) to minimize hard renovation costs across the 3 rooms.</p>
 
-            <div class="grid grid-3">
-                <div class="card reveal-card" onclick="toggleSolution(this)">
-                    <span style="color: #ff7675; font-size: 0.75rem; font-weight:700;">FLAW 1</span>
-                    <h3>Capacity Overcrowding</h3>
-                    <p>What if everyone unboxes the same room?</p>
-                    <div class="solution-hidden">
-                        <strong>✔ Live Gacha System & Trade Board:</strong> 1 pull per table based on live system capacity + lobby trading board.
-                    </div>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Modular Tech & Ambience</h3>
+                    <ul class="financial-list">
+                        <li><span>Smart Projection Mapping (3 Rooms)</span> <span>RM 25,000</span></li>
+                        <li><span>Dynamic RGB Lighting System</span> <span>RM 12,000</span></li>
+                        <li><span>Zoned Audio / Scent Diffusers</span> <span>RM 8,500</span></li>
+                        <li><span><strong>Total Tech Fit-Out</strong></span> <span style="color: #00f2fe; font-weight: bold;">~RM 45,500</span></li>
+                    </ul>
                 </div>
-
-                <div class="card reveal-card" onclick="toggleSolution(this)">
-                    <span style="color: #ff7675; font-size: 0.75rem; font-weight:700;">FLAW 2</span>
-                    <h3>Kitchen Overload</h3>
-                    <p>3 completely different cuisines overhead.</p>
-                    <div class="solution-hidden">
-                        <strong>✔ Shared Ingredient Prep:</strong> Same core chicken/fish/carbs, differentiated by sauces & plating.
-                    </div>
-                </div>
-
-                <div class="card reveal-card" onclick="toggleSolution(this)">
-                    <span style="color: #ff7675; font-size: 0.75rem; font-weight:700;">FLAW 3</span>
-                    <h3>Renovation Costs</h3>
-                    <p>High cost to rebuild rooms quarterly.</p>
-                    <div class="solution-hidden">
-                        <strong>✔ Modular Ambience:</strong> RGB smart lighting, projection mapping & decor accessories swap overnight.
-                    </div>
+                <div class="card">
+                    <h3>Furniture & Physical Decor</h3>
+                    <ul class="financial-list">
+                        <li><span>Base Tables/Seating (Est. 45 Pax Total)</span> <span>RM 30,000</span></li>
+                        <li><span>Interchangeable Table Top Decor</span> <span>RM 8,000</span></li>
+                        <li><span>Custom Blindbox Retail Kiosk</span> <span>RM 15,000</span></li>
+                        <li><span><strong>Total FFE CAPEX</strong></span> <span style="color: #ff007f; font-weight: bold;">~RM 53,000</span></li>
+                    </ul>
                 </div>
             </div>
+            <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 15px;">*Estimates exclude structural kitchen build-out and HVAC systems.</p>
         </section>
 
         <!-- SLIDE 6: Financials & Live Calculator -->
         <section class="slide">
             <span class="badge">Financial Model</span>
-            <h2>Unit Economics & Live Calculator</h2>
+            <h2>OPEX Projections & Revenue</h2>
 
             <div class="calc-box">
                 <h3 style="color: #00f2fe; margin-bottom: 10px;">Group Revenue Estimator</h3>
@@ -420,22 +425,22 @@
                 
                 <div style="display: flex; justify-content: space-between; margin-top: 10px;">
                     <span>Diners: <strong id="paxVal" style="color: #ff007f;">4 Pax</strong></span>
-                    <span>Base Set Revenue: <strong id="baseRev" style="color: #00f2fe;">RM 180.00</strong></span>
+                    <span>Base Set Revenue: <strong id="baseRev" style="color: #00f2fe;">RM 360.00</strong></span>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.85rem; color: #94a3b8;">
                     <span>Est. Bill incl. 1.16 Tax/Service Multiplier:</span>
-                    <strong id="taxRev" style="color: #ff9f43;">RM 208.80</strong>
+                    <strong id="taxRev" style="color: #ff9f43;">RM 417.60</strong>
                 </div>
             </div>
 
             <div class="grid grid-2" style="margin-top: 15px;">
                 <div class="card">
-                    <h3>Target Food Cost</h3>
-                    <p>Keep raw ingredient cost strictly at <strong>28% - 30% (~RM 13.50/set)</strong> through standardized prep lines.</p>
+                    <h3>Unit Cost (COGS)</h3>
+                    <p>At RM 90 retail, we target a <strong>30% - 32% food cost (RM 27.00 - RM 28.80)</strong> per base set to support premium ingredient sourcing while retaining strong AP metadata tracking for accurate supplier reconciliation.</p>
                 </div>
                 <div class="card">
                     <h3>Upsell Target</h3>
-                    <p>Train servers to push drinks & desserts to elevate average head spend to <strong>RM 65.00+</strong>.</p>
+                    <p>Servers drive premium themed cocktails and desserts to elevate average check sizes to <strong>RM 125.00+</strong> per pax before tax.</p>
                 </div>
             </div>
         </section>
@@ -447,15 +452,15 @@
             <div class="grid grid-3">
                 <div class="card">
                     <h3 style="color: #ff007f;">Phase 1</h3>
-                    <p><strong>Proof of Concept Pop-Up</strong><br>Run a 2-day pop-up trial to test the unboxing flow and menu speed.</p>
+                    <p><strong>Proof of Concept Pop-Up</strong><br>Run a 2-day pop-up trial to test the unboxing flow and premium menu execution.</p>
                 </div>
                 <div class="card">
                     <h3 style="color: #00f2fe;">Phase 2</h3>
-                    <p><strong>Venue & Modular Setup</strong><br>Fit out 3 modular rooms with projection and smart audio/lighting.</p>
+                    <p><strong>Venue & Modular Setup</strong><br>Procure FF&E, align supplier invoices with AP system, and install tech infrastructure.</p>
                 </div>
                 <div class="card">
                     <h3 style="color: #ff9f43;">Phase 3</h3>
-                    <p><strong>Grand Influencer Launch</strong><br>Partner with local food creators for unboxing teaser reels.</p>
+                    <p><strong>Grand Influencer Launch</strong><br>Partner with local food creators for unboxing teaser reels to drive opening week reservations.</p>
                 </div>
             </div>
             <p style="margin-top: 25px; font-weight: 700; color: #00f2fe;">Let's build this together!</p>
@@ -481,7 +486,7 @@
             const rooms = [
                 { name: "Tokyo Izakaya 🏮", color: "#ff007f" },
                 { name: "Midnight Jazz Lounge 🎷", color: "#00f2fe" },
-                { name: "Modern Kopitiam 🍜", color: "#ff9f43" }
+                { name: "Premium Kopitiam 🍜", color: "#ff9f43" }
             ];
             const randomRoom = rooms[Math.floor(Math.random() * rooms.length)];
             document.getElementById('boxIcon').innerText = "🎉";
@@ -499,20 +504,10 @@
             });
         }
 
-        // Reveal Flaw Solutions
-        function toggleSolution(card) {
-            const sol = card.querySelector('.solution-hidden');
-            if (sol.style.display === "block") {
-                sol.style.display = "none";
-            } else {
-                sol.style.display = "block";
-            }
-        }
-
-        // Live Financial Calculator
+        // Live Financial Calculator (Updated for RM 90 base)
         function updateCalc() {
             const pax = document.getElementById('paxSlider').value;
-            const base = pax * 45;
+            const base = pax * 90;
             const totalWithTax = (base * 1.16).toFixed(2);
             document.getElementById('paxVal').innerText = `${pax} Pax`;
             document.getElementById('baseRev').innerText = `RM ${base.toFixed(2)}`;
