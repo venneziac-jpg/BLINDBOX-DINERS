@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blindbox Diner - Concept Pitch</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap');
+
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Slide Container */
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 10%;
+            box-sizing: border-box;
+            border-bottom: 1px solid #333;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37; /* Gold accent */
+            text-align: center;
+        }
+
+        h1 { font-size: 4rem; margin-bottom: 10px; }
+        h2 { font-size: 2.5rem; margin-bottom: 30px; }
+        p, li { font-size: 1.2rem; line-height: 1.6; color: #e0e0e0; }
+        
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Grid for Content */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .card {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .flaw { color: #ff6b6b; font-weight: 600; }
+        .solution { color: #4cd137; font-weight: 600; }
+
+        /* Navigation */
+        .nav-dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .nav-dots a {
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            background: #555;
+            transition: 0.3s;
+        }
+        .nav-dots a:hover { background: #d4af37; }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-dots">
+        <a href="#slide1" title="Title"></a>
+        <a href="#slide2" title="Concept"></a>
+        <a href="#slide3" title="Challenges"></a>
+        <a href="#slide4" title="Financials"></a>
+    </div>
+
+    <!-- Slide 1: Title -->
+    <section id="slide1" class="slide">
+        <h1>The Blindbox Diner</h1>
+        <p>A high-novelty, social-first dining experience.</p>
+        <img src="watermarked_img_370928535755291714.jpg" alt="Mystery Box on Table" class="hero-image">
+    </section>
+
+    <!-- Slide 2: Core Concept -->
+    <section id="slide2" class="slide">
+        <h2>The Core Concept</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>The Mechanic</h3>
+                <p>Customers purchase a mystery box at the entrance. Unboxing it reveals which of the 3 themed dining rooms they will eat in (e.g., Izakaya, Jazz Lounge, Malaysian Kopitiam).</p>
+            </div>
+            <div class="card">
+                <h3>The Offering</h3>
+                <p><strong>RM 45 per pax</strong> includes entry and a set meal tailored to the room's theme. Guests choose between 2 set options inside. Themes rotate quarterly to drive repeat visits.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Flaws & Solutions -->
+    <section id="slide3" class="slide">
+        <h2>Operational Realities: Flaws & Solutions</h2>
+        <div class="grid-2">
+            <div class="card">
+                <p><span class="flaw">Flaw: Table Capacity Bottleneck.</span> What if everyone unboxes the Izakaya room at once, leaving others empty and groups split up?</p>
+                <p><span class="solution">Solution: Group Unboxing & Live Weighted Gacha.</span> One pull per table/group based on live availability. Add a "Trading Board" in the lobby so guests can trade tokens if they want a different room.</p>
+            </div>
+            <div class="card">
+                <p><span class="flaw">Flaw: Kitchen Complexity.</span> Cooking 3 completely different cuisines requires massive kitchen overhead and staff.</p>
+                <p><span class="solution">Solution: Shared Ingredient Architecture.</span> All sets use the same core proteins and carbs (e.g., chicken, rice, noodles) but are finished with room-specific sauces and plating styles.</p>
+            </div>
+             <div class="card" style="grid-column: 1 / -1;">
+                <p><span class="flaw">Flaw: High Renovation Costs.</span> Changing 3 rooms completely every quarter is too expensive.</p>
+                <p><span class="solution">Solution: Modular Ambience.</span> Instead of building walls, use smart RGB lighting, projection mapping, music, and interchangeable table accessories to change themes overnight.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Financials -->
+    <section id="slide4" class="slide">
+        <h2>Financial Projections</h2>
+        <div class="card" style="max-width: 600px; width: 100%;">
+            <h3>Pricing Structure</h3>
+            <ul>
+                <li><strong>Base Set Price:</strong> RM 45.00</li>
+                <li><strong>Est. Final Group Checkout Price (per pax):</strong> RM 52.20 (utilizing a standard 1.16 multiplier to account for compounded service charge and tax).</li>
+                <li><strong>Target Upsell:</strong> Themed mocktails/cocktails & desserts to push base spend to RM 65.00+ before tax.</li>
+                <li><strong>Est. Food Cost:</strong> Keep base ingredients at 28-32% (RM 13.50 max per set) by unifying the kitchen prep line.</li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blindbox Diner - Concept Pitch</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap');
+
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Slide Container */
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 10%;
+            box-sizing: border-box;
+            border-bottom: 1px solid #333;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37; /* Gold accent */
+            text-align: center;
+        }
+
+        h1 { font-size: 4rem; margin-bottom: 10px; }
+        h2 { font-size: 2.5rem; margin-bottom: 30px; }
+        p, li { font-size: 1.2rem; line-height: 1.6; color: #e0e0e0; }
+        
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Grid for Content */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .card {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .flaw { color: #ff6b6b; font-weight: 600; }
+        .solution { color: #4cd137; font-weight: 600; }
+
+        /* Navigation */
+        .nav-dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .nav-dots a {
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            background: #555;
+            transition: 0.3s;
+        }
+        .nav-dots a:hover { background: #d4af37; }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-dots">
+        <a href="#slide1" title="Title"></a>
+        <a href="#slide2" title="Concept"></a>
+        <a href="#slide3" title="Challenges"></a>
+        <a href="#slide4" title="Financials"></a>
+    </div>
+
+    <!-- Slide 1: Title -->
+    <section id="slide1" class="slide">
+        <h1>The Blindbox Diner</h1>
+        <p>A high-novelty, social-first dining experience.</p>
+        <img src="watermarked_img_370928535755291714.jpg" alt="Mystery Box on Table" class="hero-image">
+    </section>
+
+    <!-- Slide 2: Core Concept -->
+    <section id="slide2" class="slide">
+        <h2>The Core Concept</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>The Mechanic</h3>
+                <p>Customers purchase a mystery box at the entrance. Unboxing it reveals which of the 3 themed dining rooms they will eat in (e.g., Izakaya, Jazz Lounge, Malaysian Kopitiam).</p>
+            </div>
+            <div class="card">
+                <h3>The Offering</h3>
+                <p><strong>RM 45 per pax</strong> includes entry and a set meal tailored to the room's theme. Guests choose between 2 set options inside. Themes rotate quarterly to drive repeat visits.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Flaws & Solutions -->
+    <section id="slide3" class="slide">
+        <h2>Operational Realities: Flaws & Solutions</h2>
+        <div class="grid-2">
+            <div class="card">
+                <p><span class="flaw">Flaw: Table Capacity Bottleneck.</span> What if everyone unboxes the Izakaya room at once, leaving others empty and groups split up?</p>
+                <p><span class="solution">Solution: Group Unboxing & Live Weighted Gacha.</span> One pull per table/group based on live availability. Add a "Trading Board" in the lobby so guests can trade tokens if they want a different room.</p>
+            </div>
+            <div class="card">
+                <p><span class="flaw">Flaw: Kitchen Complexity.</span> Cooking 3 completely different cuisines requires massive kitchen overhead and staff.</p>
+                <p><span class="solution">Solution: Shared Ingredient Architecture.</span> All sets use the same core proteins and carbs (e.g., chicken, rice, noodles) but are finished with room-specific sauces and plating styles.</p>
+            </div>
+             <div class="card" style="grid-column: 1 / -1;">
+                <p><span class="flaw">Flaw: High Renovation Costs.</span> Changing 3 rooms completely every quarter is too expensive.</p>
+                <p><span class="solution">Solution: Modular Ambience.</span> Instead of building walls, use smart RGB lighting, projection mapping, music, and interchangeable table accessories to change themes overnight.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Financials -->
+    <section id="slide4" class="slide">
+        <h2>Financial Projections</h2>
+        <div class="card" style="max-width: 600px; width: 100%;">
+            <h3>Pricing Structure</h3>
+            <ul>
+                <li><strong>Base Set Price:</strong> RM 45.00</li>
+                <li><strong>Est. Final Group Checkout Price (per pax):</strong> RM 52.20 (utilizing a standard 1.16 multiplier to account for compounded service charge and tax).</li>
+                <li><strong>Target Upsell:</strong> Themed mocktails/cocktails & desserts to push base spend to RM 65.00+ before tax.</li>
+                <li><strong>Est. Food Cost:</strong> Keep base ingredients at 28-32% (RM 13.50 max per set) by unifying the kitchen prep line.</li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html>
