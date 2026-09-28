@@ -235,7 +235,7 @@
             z-index: 100;
         }
 
-        /* Simplified Tab & Calc CSS for brevity in this snippet, keeping rest same as before */
+        /* Simplified Tab & Calc CSS */
         .tab-buttons { display: flex; gap: 10px; margin-bottom: 16px; width: 100%; max-width: 600px; justify-content: center; }
         .tab-btn { flex: 1; padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(15, 20, 32, 0.8); color: #94a3b8; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: 0.3s; }
         .tab-btn.active { background: #00f2fe; color: #08090d; border-color: #00f2fe; box-shadow: 0 0 15px rgba(0,242,254,0.4); }
@@ -246,8 +246,6 @@
         .slider-input { width: 100%; margin: 15px 0; accent-color: #00f2fe; }
         ul.financial-list { list-style: none; padding-left: 0; }
         ul.financial-list li { margin-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 4px; display: flex; justify-content: space-between; }
-        .reveal-card { cursor: pointer; position: relative; }
-        .solution-hidden { display: none; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(0, 242, 254, 0.2); color: #2ed573; }
 
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
@@ -469,25 +467,24 @@
 
         // Interactive Unbox Function with Collectible Images
         function triggerUnbox() {
-            // These are placeholder image URLs. You can replace the 'img' links with your own custom generated images.
             const rooms = [
                 { 
                     name: "Midnight Jazz Lounge 🎷", 
                     color: "#00f2fe", 
                     plushie: "Collectible: Tiny Tapir w/ Saxophone",
-                    img: "https://placehold.co/400x400/0f172a/00f2fe?text=Tapir+Plushie"
+                    img: "1790572117605.jpg" 
                 },
                 { 
                     name: "Tokyo Izakaya 🏮", 
                     color: "#ff007f", 
                     plushie: "Collectible: Shiba Inu Ramen Bowl",
-                    img: "https://placehold.co/400x400/0f172a/ff007f?text=Shiba+Plushie"
+                    img: "1790572121125.jpg" 
                 },
                 { 
                     name: "Premium Kopitiam 🍜", 
                     color: "#ff9f43", 
                     plushie: "Collectible: Malayan Tiger Kopi Cup",
-                    img: "https://placehold.co/400x400/0f172a/ff9f43?text=Tiger+Plushie"
+                    img: "1790572125364.jpg" 
                 }
             ];
 
