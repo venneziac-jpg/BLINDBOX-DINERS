@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Blindbox Diner - Concept Pitch</title>
+    <title>The Blindbox Diner - Business Partnership Deck</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body, html {
             width: 100%;
             height: 100%;
             overflow: hidden;
-            font-family: 'Inter', sans-serif;
-            background-color: #0d0d0f;
-            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0c10;
+            color: #f0f2f5;
         }
 
         /* Horizontal Slider Container */
@@ -33,14 +34,8 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        /* Hide Scrollbar */
-        .slider-container::-webkit-scrollbar {
-            display: none;
-        }
-        .slider-container {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+        .slider-container::-webkit-scrollbar { display: none; }
+        .slider-container { -ms-overflow-style: none; scrollbar-width: none; }
 
         /* Slide Layout */
         .slide {
@@ -52,221 +47,387 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 30px 24px;
+            padding: 40px 6%;
             position: relative;
             overflow-y: auto;
+            background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.05) 0%, rgba(11, 12, 16, 0.98) 70%);
+        }
+
+        /* Typography */
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 50px;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: #e5c158;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
         }
 
         h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            color: #d4af37;
+            font-family: 'Cinzel', serif;
+            color: #f3e5ab;
             text-align: center;
         }
 
         h1 {
-            font-size: 3rem;
-            margin-bottom: 12px;
+            font-size: 3.2rem;
             letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            text-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
         }
 
         h2 {
             font-size: 2.2rem;
             margin-bottom: 24px;
-        }
-
-        p, li {
-            font-size: 1.05rem;
-            line-height: 1.6;
-            color: #e0e0e0;
+            letter-spacing: 0.5px;
         }
 
         .subtitle {
-            font-size: 1.2rem;
-            color: #a0a0a0;
+            font-size: 1.15rem;
+            color: #b0b5c0;
             text-align: center;
-            margin-bottom: 20px;
+            max-width: 650px;
+            margin-bottom: 24px;
+            line-height: 1.5;
         }
 
-        .hero-image {
-            width: 100%;
-            max-width: 520px;
-            max-height: 45vh;
-            object-fit: cover;
-            border-radius: 16px;
-            margin-top: 10px;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.7);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-
-        /* Content Grid */
+        /* Glassmorphism Cards */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
             width: 100%;
-            max-width: 950px;
+            max-width: 1000px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            width: 100%;
+            max-width: 1050px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            width: 100%;
+            max-width: 1050px;
         }
 
         .card {
-            background: #18181c;
+            background: rgba(22, 25, 34, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            border-radius: 16px;
             padding: 24px;
-            border-radius: 14px;
-            border-left: 4px solid #d4af37;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
         }
 
         .card h3 {
             text-align: left;
+            font-size: 1.25rem;
             margin-bottom: 10px;
-            font-size: 1.4rem;
+            color: #e5c158;
         }
 
-        .flaw { color: #ff6b6b; font-weight: 600; display: block; margin-bottom: 6px; }
-        .solution { color: #4cd137; font-weight: 600; display: block; margin-top: 10px; margin-bottom: 6px; }
-
-        ul {
-            list-style: none;
+        p, li {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #c5cad3;
         }
 
-        ul li {
-            margin-bottom: 12px;
-            padding-left: 20px;
-            position: relative;
+        /* Metric Callouts */
+        .stat-box {
+            text-align: center;
+            padding: 16px;
+            background: rgba(212, 175, 55, 0.06);
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        ul li::before {
-            content: "•";
-            color: #d4af37;
-            font-weight: bold;
-            font-size: 1.4rem;
-            position: absolute;
-            left: 0;
-            top: -2px;
+        .stat-number {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #f3e5ab;
         }
 
-        /* Swipe Instruction Badge */
-        .swipe-hint {
-            position: absolute;
-            bottom: 25px;
-            background: rgba(212, 175, 55, 0.15);
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            color: #d4af37;
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
+        .stat-label {
+            font-size: 0.8rem;
+            color: #9aa0a8;
             text-transform: uppercase;
-            animation: pulse 2s infinite;
+            letter-spacing: 1px;
+            margin-top: 4px;
         }
 
-        @keyframes pulse {
-            0% { opacity: 0.6; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.05); }
-            100% { opacity: 0.6; transform: scale(1); }
+        /* Flaw & Solution Styling */
+        .flaw-tag {
+            background: rgba(255, 99, 132, 0.15);
+            color: #ff7675;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 8px;
         }
 
-        /* Floating Nav Buttons */
+        .solution-tag {
+            background: rgba(46, 213, 115, 0.15);
+            color: #2ed573;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 8px;
+            margin-top: 10px;
+        }
+
+        /* Visual Media Container */
+        .hero-img {
+            width: 100%;
+            max-width: 580px;
+            max-height: 40vh;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            margin: 12px 0;
+        }
+
+        /* Floating Nav Controls */
         .nav-btn {
             position: fixed;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(24, 24, 28, 0.8);
-            border: 1px solid rgba(212, 175, 55, 0.5);
-            color: #d4af37;
-            width: 44px;
-            height: 44px;
+            background: rgba(18, 20, 28, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: #f3e5ab;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             cursor: pointer;
             z-index: 100;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
+            transition: all 0.2s ease;
         }
-        .prev-btn { left: 15px; }
-        .next-btn { right: 15px; }
 
-        @media (max-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr; }
+        .nav-btn:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+        }
+
+        .prev-btn { left: 20px; }
+        .next-btn { right: 20px; }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(18, 20, 28, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #d4af37;
+            letter-spacing: 1px;
+            backdrop-filter: blur(8px);
+            z-index: 100;
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 850px) {
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
             h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.7rem; }
-            .card { padding: 18px; }
-            .nav-btn { display: none; } /* On mobile, swiping is natural */
+            h2 { font-size: 1.6rem; }
+            .subtitle { font-size: 0.95rem; }
+            .nav-btn { display: none; }
+            .slide { padding: 30px 5%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- On-screen Navigation for Desktop -->
+    <!-- On-screen Nav -->
     <button class="nav-btn prev-btn" onclick="scrollPrev()">&#10094;</button>
     <button class="nav-btn next-btn" onclick="scrollNext()">&#10095;</button>
+    <div class="slide-counter" id="slideCounter">Slide 1 of 7</div>
 
     <div class="slider-container" id="slider">
 
-        <!-- Slide 1: Title -->
+        <!-- SLIDE 1: Title & Vision -->
         <section class="slide">
+            <span class="badge">Business Partnership Proposal</span>
             <h1>The Blindbox Diner</h1>
-            <p class="subtitle">A High-Novelty, Mystery Dining Experience</p>
-            <img src="watermarked_img_370928535755291714.jpg" alt="Blind Box Concept" class="hero-image">
-            <div class="swipe-hint">Swipe Right &rarr;</div>
+            <p class="subtitle">Where Mystery Retail Meets Immersive Culinary Entertainment.</p>
+            <img src="watermarked_img_370928535755291714.jpg" alt="Blindbox Dining Concept" class="hero-img">
+            <p style="font-size: 0.85rem; color: #8a909a; margin-top: 10px;">Swipe right or click arrow to view deck &rarr;</p>
         </section>
 
-        <!-- Slide 2: The Concept -->
+        <!-- SLIDE 2: The Market Opportunity -->
         <section class="slide">
-            <h2>The Core Concept</h2>
+            <span class="badge">Market Driver</span>
+            <h2>Why Now? The Mystery Economy</h2>
+            <p class="subtitle">Gen Z & Millennial diners prioritize experience and viral shareability over conventional dining.</p>
+            <div class="grid-3">
+                <div class="card stat-box">
+                    <div class="stat-number">#1 Trend</div>
+                    <div class="stat-label">Blind Box / Mystery Unboxing Culture</div>
+                    <p style="margin-top: 10px; font-size: 0.85rem;">Capitalizing on pop-mart & mystery capsule mechanics in everyday consumer culture.</p>
+                </div>
+                <div class="card stat-box">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Organic Social Capture</div>
+                    <p style="margin-top: 10px; font-size: 0.85rem;">The physical unboxing ritual at entry creates natural TikTok & Instagram Reels content.</p>
+                </div>
+                <div class="card stat-box">
+                    <div class="stat-number">4x / Year</div>
+                    <div class="stat-label">Built-In Repeat Rate</div>
+                    <p style="margin-top: 10px; font-size: 0.85rem;">Quarterly room and menu rotations give diners a constant reason to return.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: The Guest Journey -->
+        <section class="slide">
+            <span class="badge">Guest Experience</span>
+            <h2>The 4-Step Dining Journey</h2>
+            <div class="grid-4">
+                <div class="card">
+                    <h3>1. Unbox</h3>
+                    <p>Guest pays RM 45 base entry and pulls a branded mystery capsule/box in the lobby.</p>
+                </div>
+                <div class="card">
+                    <h3>2. Reveal</h3>
+                    <p>Unboxing reveals assignment to 1 of 3 distinct themed dining rooms.</p>
+                </div>
+                <div class="card">
+                    <h3>3. Immerse</h3>
+                    <p>Escorted into an atmospheric room tailored with music, scent, and curated lighting.</p>
+                </div>
+                <div class="card">
+                    <h3>4. Dine & Upsell</h3>
+                    <p>Selects 1 of 2 set meals included in entry. Staff pushes high-margin drinks & desserts.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: Room Themes & Modular Ambience -->
+        <section class="slide">
+            <span class="badge">Atmosphere & Concept</span>
+            <h2>3 Themed Rooms (Quarterly Rotations)</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Room A: Tokyo Izakaya</h3>
+                    <p>Neon accents, ambient Japanese alleyway soundscapes, robata skewers, and highball pairings.</p>
+                </div>
+                <div class="card">
+                    <h3>Room B: Midnight Jazz</h3>
+                    <p>Dimly lit, warm amber lighting, smooth jazz audio, bistro sets, and craft mocktails/cocktails.</p>
+                </div>
+                <div class="card">
+                    <h3>Room C: Modern Kopitiam</h3>
+                    <p>Nostalgic local aesthetic with elevated modern Malaysian comfort food and artisanal tea options.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: Operational Risk & Mitigation -->
+        <section class="slide">
+            <span class="badge">Operations Playbook</span>
+            <h2>Solving Operational Hurdles</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <span class="flaw-tag">Flaw: Table Capacity Bottleneck</span>
+                    <p>Overcrowded popular rooms leaving other rooms empty.</p>
+                    <span class="solution-tag">Solution: Group Allocation & Trade Board</span>
+                    <p>1 box pull per group table matched to live digital system. Lobby Trade Board lets diners swap cards.</p>
+                </div>
+                <div class="card">
+                    <span class="flaw-tag">Flaw: Kitchen Complexity</span>
+                    <p>Cooking 3 different cuisines creates huge kitchen overhead.</p>
+                    <span class="solution-tag">Solution: Shared Ingredient Line</span>
+                    <p>Shared core proteins/carbs across all rooms, differentiated by room-specific sauces & plating.</p>
+                </div>
+                <div class="card">
+                    <span class="flaw-tag">Flaw: High Renovation Costs</span>
+                    <p>Quarterly room rebuilds eat away at profit margins.</p>
+                    <span class="solution-tag">Solution: Modular Ambience</span>
+                    <p>Smart lighting, projection mapping, soundscapes, and interchangeable table decor replace physical builds.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: Financial Projections & Economics -->
+        <section class="slide">
+            <span class="badge">Financial Strategy</span>
+            <h2>Unit Economics & Margin Target</h2>
             <div class="grid-2">
                 <div class="card">
-                    <h3>The Mystery Mechanic</h3>
-                    <p>Diners purchase a mystery box upon arrival. Opening the box assigns them to 1 of 3 themed dining rooms (e.g., Tokyo Izakaya, Jazz Lounge, Malaysian Kopitiam).</p>
+                    <h3>Base Set Revenue</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 8px;">• <strong>Base Set Price:</strong> RM 45.00 net per head</li>
+                        <li style="margin-bottom: 8px;">• <strong>Final Bill Target:</strong> ~RM 52.20 (applying standard 1.16 multiplier for service charge & taxes)</li>
+                        <li style="margin-bottom: 8px;">• <strong>Target Food Cost:</strong> Keep base ingredients under 30% (~RM 13.50) via standardized core prep</li>
+                    </ul>
                 </div>
                 <div class="card">
-                    <h3>The Pricing & Menu</h3>
-                    <p><strong>RM 45 per pax</strong> flat entry including a full set meal tailored to that room's theme. Diners choose between 2 set menu options. Themes rotate quarterly.</p>
+                    <h3>Upsell Engine (High Margin)</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 8px;">• <strong>Themed Signature Drinks:</strong> RM 15 - 22 (Mocktails / Cocktails)</li>
+                        <li style="margin-bottom: 8px;">• <strong>Theme Add-on Desserts:</strong> RM 12 - 18</li>
+                        <li style="margin-bottom: 8px;">• <strong>Target Avg Spend / Pax:</strong> <strong>RM 65.00+</strong> (significantly boosting net profitability)</li>
+                    </ul>
                 </div>
             </div>
-            <div class="swipe-hint">Swipe Right &rarr;</div>
         </section>
 
-        <!-- Slide 3: Operational Flaws & Solutions -->
+        <!-- SLIDE 7: Roadmap & Next Steps -->
         <section class="slide">
-            <h2>Operational Realities & Solutions</h2>
-            <div class="grid-2">
+            <span class="badge">Next Steps</span>
+            <h2>Execution Roadmap</h2>
+            <div class="grid-3" style="margin-bottom: 20px;">
                 <div class="card">
-                    <span class="flaw">Flaw 1: Room Capacity Bottleneck</span>
-                    <p>If everyone unboxes the same room, waiting times soar while other rooms sit empty.</p>
-                    <span class="solution">Solution: Group Unboxing & Trade Board</span>
-                    <p>1 pull per table based on live room availability. Guests can trade room cards on a lobby board.</p>
+                    <h3>Phase 1: Pop-Up Proof</h3>
+                    <p>Run a 2-day pop-up dining trial to validate capacity flow, unboxing mechanic, and set menu reception.</p>
                 </div>
                 <div class="card">
-                    <span class="flaw">Flaw 2: Kitchen Overhead</span>
-                    <p>Cooking 3 totally different cuisines strains prep work, labor, and food waste.</p>
-                    <span class="solution">Solution: Shared Ingredient Line</span>
-                    <p>All 3 rooms share core proteins and produce, differentiated primarily by sauces and plating.</p>
+                    <h3>Phase 2: Location & Fit-out</h3>
+                    <p>Secure a 3-room layout venue and install modular lighting, sound, and projection systems.</p>
+                </div>
+                <div class="card">
+                    <h3>Phase 3: Grand Launch</h3>
+                    <p>Roll out official launch campaign with local food influencers and mystery unboxing teasers.</p>
                 </div>
             </div>
-            <div class="swipe-hint">Swipe Right &rarr;</div>
-        </section>
-
-        <!-- Slide 4: Financials & Economics -->
-        <section class="slide">
-            <h2>Financial Projections</h2>
-            <div class="card" style="max-width: 650px; width: 100%;">
-                <h3>Unit Economics Breakdown</h3>
-                <ul>
-                    <li><strong>Base Entry Price:</strong> RM 45.00 net base set.</li>
-                    <li><strong>Est. Total Bill per Pax:</strong> ~RM 52.20 (utilizing standard 1.16 multiplier for service charge and taxes).</li>
-                    <li><strong>Upsell Strategy:</strong> Room-specific signature cocktails, mocktails, and desserts aimed at driving average spend to RM 65.00+ per head.</li>
-                    <li><strong>Target Food Cost:</strong> Keep base ingredient costs under 30% (~RM 13.50) via standardized core prep.</li>
-                </ul>
-            </div>
-            <div class="swipe-hint">&larr; Swipe Left to Review</div>
+            <p style="font-weight: 600; color: #f3e5ab;">Let's bring this concept to life together.</p>
         </section>
 
     </div>
 
     <script>
         const slider = document.getElementById('slider');
+        const counter = document.getElementById('slideCounter');
+        const totalSlides = 7;
 
         function scrollNext() {
             slider.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
@@ -275,6 +436,18 @@
         function scrollPrev() {
             slider.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
         }
+
+        // Update slide counter on scroll
+        slider.addEventListener('scroll', () => {
+            const currentSlide = Math.round(slider.scrollLeft / window.innerWidth) + 1;
+            counter.innerText = `Slide ${currentSlide} of ${totalSlides}`;
+        });
+
+        // Keyboard arrow navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') scrollNext();
+            if (e.key === 'ArrowLeft') scrollPrev();
+        });
     </script>
 </body>
 </html>
