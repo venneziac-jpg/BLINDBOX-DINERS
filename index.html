@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>The Blindbox Diner - Business Partnership Deck</title>
+    <title>The Blindbox Diner - Partnership Deck</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
         * {
             box-sizing: border-box;
@@ -19,15 +19,15 @@
             height: 100%;
             overflow: hidden;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0b0c10;
-            color: #f0f2f5;
+            background-color: #08090d;
+            color: #f1f5f9;
         }
 
-        /* Horizontal Slider Container */
+        /* Horizontal Slider */
         .slider-container {
             display: flex;
             width: 100vw;
-            height: 100vh;
+            height: 100dvh;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
@@ -37,389 +37,428 @@
         .slider-container::-webkit-scrollbar { display: none; }
         .slider-container { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Slide Layout */
+        /* Slide Standard Setup */
         .slide {
             flex: 0 0 100vw;
             width: 100vw;
-            height: 100vh;
+            height: 100dvh;
             scroll-snap-align: start;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            padding: 40px 6%;
+            padding: 50px 20px 80px 20px;
             position: relative;
             overflow-y: auto;
-            background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.05) 0%, rgba(11, 12, 16, 0.98) 70%);
+            background: radial-gradient(circle at 50% 10%, rgba(0, 242, 254, 0.08) 0%, rgba(8, 9, 13, 1) 80%);
         }
 
-        /* Typography */
+        /* Neon & Glassmorphism Styling */
         .badge {
             display: inline-block;
-            padding: 6px 16px;
-            border-radius: 50px;
-            background: rgba(212, 175, 55, 0.12);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            color: #e5c158;
+            padding: 6px 14px;
+            border-radius: 30px;
+            background: rgba(0, 242, 254, 0.12);
+            border: 1px solid rgba(0, 242, 254, 0.4);
+            color: #00f2fe;
             font-size: 0.75rem;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
         }
 
         h1, h2, h3 {
-            font-family: 'Cinzel', serif;
-            color: #f3e5ab;
+            font-family: 'Outfit', sans-serif;
             text-align: center;
         }
 
         h1 {
-            font-size: 3.2rem;
-            letter-spacing: -0.5px;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #00f2fe 50%, #ff007f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 8px;
-            text-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
         }
 
         h2 {
-            font-size: 2.2rem;
-            margin-bottom: 24px;
-            letter-spacing: 0.5px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
         }
 
         .subtitle {
-            font-size: 1.15rem;
-            color: #b0b5c0;
+            font-size: 0.95rem;
+            color: #94a3b8;
             text-align: center;
-            max-width: 650px;
-            margin-bottom: 24px;
+            max-width: 600px;
+            margin-bottom: 20px;
             line-height: 1.5;
         }
 
-        /* Glassmorphism Cards */
-        .grid-2 {
+        /* Glass Cards */
+        .grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            width: 100%;
-            max-width: 1000px;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            width: 100%;
-            max-width: 1050px;
-        }
-
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
             gap: 16px;
             width: 100%;
-            max-width: 1050px;
+            max-width: 900px;
         }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
 
         .card {
-            background: rgba(22, 25, 34, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.18);
+            background: rgba(18, 22, 34, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
         }
 
         .card:hover {
-            border-color: rgba(212, 175, 55, 0.4);
+            border-color: rgba(0, 242, 254, 0.4);
             transform: translateY(-2px);
         }
 
         .card h3 {
             text-align: left;
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            color: #e5c158;
+            font-size: 1.15rem;
+            color: #00f2fe;
+            margin-bottom: 8px;
         }
 
-        p, li {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #c5cad3;
-        }
+        p, li { font-size: 0.9rem; line-height: 1.5; color: #cbd5e1; }
 
-        /* Metric Callouts */
-        .stat-box {
+        /* Interactive Unbox Simulator */
+        .unbox-demo {
+            background: linear-gradient(135deg, rgba(255,0,127,0.15), rgba(0,242,254,0.15));
+            border: 2px dashed rgba(0, 242, 254, 0.5);
+            border-radius: 20px;
+            padding: 24px;
             text-align: center;
-            padding: 16px;
-            background: rgba(212, 175, 55, 0.06);
-            border-radius: 12px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .stat-number {
-            font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #f3e5ab;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: #9aa0a8;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 4px;
-        }
-
-        /* Flaw & Solution Styling */
-        .flaw-tag {
-            background: rgba(255, 99, 132, 0.15);
-            color: #ff7675;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-
-        .solution-tag {
-            background: rgba(46, 213, 115, 0.15);
-            color: #2ed573;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 8px;
-            margin-top: 10px;
-        }
-
-        /* Visual Media Container */
-        .hero-img {
             width: 100%;
-            max-width: 580px;
-            max-height: 40vh;
-            object-fit: cover;
-            border-radius: 16px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-            margin: 12px 0;
+            max-width: 400px;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .unbox-demo:active { transform: scale(0.96); }
+        .unbox-btn {
+            background: linear-gradient(90deg, #ff007f, #00f2fe);
+            border: none;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 12px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
         }
 
-        /* Floating Nav Controls */
+        /* Interactive Tabs (Slide 4) */
+        .tab-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+            width: 100%;
+            max-width: 600px;
+            justify-content: center;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 10px 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(15, 20, 32, 0.8);
+            color: #94a3b8;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .tab-btn.active {
+            background: #00f2fe;
+            color: #08090d;
+            border-color: #00f2fe;
+            box-shadow: 0 0 15px rgba(0,242,254,0.4);
+        }
+        .tab-content { display: none; width: 100%; max-width: 800px; }
+        .tab-content.active { display: block; }
+
+        .slide-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Interactive Flaw Reveal Cards (Slide 5) */
+        .reveal-card {
+            cursor: pointer;
+            position: relative;
+        }
+        .solution-hidden {
+            display: none;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(0, 242, 254, 0.2);
+            color: #2ed573;
+        }
+
+        /* Interactive Calculator (Slide 6) */
+        .calc-box {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid #ff007f;
+            border-radius: 16px;
+            padding: 20px;
+            width: 100%;
+            max-width: 500px;
+        }
+        .slider-input {
+            width: 100%;
+            margin: 15px 0;
+            accent-color: #00f2fe;
+        }
+
+        /* Fixed Navigation */
         .nav-btn {
             position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(18, 20, 28, 0.85);
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            color: #f3e5ab;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.3rem;
+            bottom: 20px;
+            background: rgba(18, 22, 34, 0.9);
+            border: 1px solid rgba(0, 242, 254, 0.4);
+            color: #00f2fe;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.85rem;
             cursor: pointer;
             z-index: 100;
             backdrop-filter: blur(8px);
-            transition: all 0.2s ease;
         }
-
-        .nav-btn:hover {
-            background: rgba(212, 175, 55, 0.2);
-            border-color: #d4af37;
-        }
-
         .prev-btn { left: 20px; }
         .next-btn { right: 20px; }
 
         .slide-counter {
             position: fixed;
-            bottom: 20px;
+            bottom: 26px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(18, 20, 28, 0.85);
-            border: 1px solid rgba(212, 175, 55, 0.25);
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            color: #d4af37;
+            font-size: 0.75rem;
+            color: #64748b;
             letter-spacing: 1px;
-            backdrop-filter: blur(8px);
             z-index: 100;
         }
 
-        /* Responsive Layouts */
-        @media (max-width: 850px) {
-            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.6rem; }
-            .subtitle { font-size: 0.95rem; }
-            .nav-btn { display: none; }
-            .slide { padding: 30px 5%; }
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .slide { padding: 40px 15px 80px 15px; }
+            .nav-btn { padding: 8px 14px; font-size: 0.75rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- On-screen Nav -->
-    <button class="nav-btn prev-btn" onclick="scrollPrev()">&#10094;</button>
-    <button class="nav-btn next-btn" onclick="scrollNext()">&#10095;</button>
-    <div class="slide-counter" id="slideCounter">Slide 1 of 7</div>
+    <button class="nav-btn prev-btn" onclick="scrollPrev()">&#8592; Prev</button>
+    <div class="slide-counter" id="slideCounter">1 / 7</div>
+    <button class="nav-btn next-btn" onclick="scrollNext()">Next &#8594;</button>
 
     <div class="slider-container" id="slider">
 
-        <!-- SLIDE 1: Title & Vision -->
+        <!-- SLIDE 1: Interactive Cover -->
         <section class="slide">
-            <span class="badge">Business Partnership Proposal</span>
+            <span class="badge">Business Proposal</span>
             <h1>The Blindbox Diner</h1>
-            <p class="subtitle">Where Mystery Retail Meets Immersive Culinary Entertainment.</p>
-            <img src="watermarked_img_370928535755291714.jpg" alt="Blindbox Dining Concept" class="hero-img">
-            <p style="font-size: 0.85rem; color: #8a909a; margin-top: 10px;">Swipe right or click arrow to view deck &rarr;</p>
+            <p class="subtitle">A high-novelty, social-first mystery dining experience.</p>
+            
+            <div class="unbox-demo" onclick="triggerUnbox()">
+                <div style="font-size: 3rem; margin-bottom: 5px;" id="boxIcon">🎁</div>
+                <h3 style="color: #fff; font-size: 1.1rem;" id="boxText">Tap to Unbox a Room!</h3>
+                <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 4px;">(Interactive pitch demo for partners)</p>
+                <button class="unbox-btn">PULL MYSTERY BOX</button>
+            </div>
+            
+            <p style="font-size: 0.8rem; color: #64748b; margin-top: 15px;">Swipe right or tap Next to explore &rarr;</p>
         </section>
 
-        <!-- SLIDE 2: The Market Opportunity -->
+        <!-- SLIDE 2: Market Opportunity -->
         <section class="slide">
-            <span class="badge">Market Driver</span>
-            <h2>Why Now? The Mystery Economy</h2>
-            <p class="subtitle">Gen Z & Millennial diners prioritize experience and viral shareability over conventional dining.</p>
-            <div class="grid-3">
-                <div class="card stat-box">
-                    <div class="stat-number">#1 Trend</div>
-                    <div class="stat-label">Blind Box / Mystery Unboxing Culture</div>
-                    <p style="margin-top: 10px; font-size: 0.85rem;">Capitalizing on pop-mart & mystery capsule mechanics in everyday consumer culture.</p>
+            <span class="badge">Market Opportunity</span>
+            <h2>Why This Concept Wins</h2>
+            <p class="subtitle">Tapping into high-margin experiential dining and viral social trends.</p>
+
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3 style="color: #ff007f;">🔥 Viral Organic Reach</h3>
+                    <p>The unboxing reveal creates built-in TikTok & Instagram Reel clips before guests even sit down.</p>
                 </div>
-                <div class="card stat-box">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Organic Social Capture</div>
-                    <p style="margin-top: 10px; font-size: 0.85rem;">The physical unboxing ritual at entry creates natural TikTok & Instagram Reels content.</p>
+                <div class="card">
+                    <h3 style="color: #00f2fe;">🔄 4x Annual Repeat Rate</h3>
+                    <p>Quarterly room rotations give diners a fresh reason to return every 3 months.</p>
                 </div>
-                <div class="card stat-box">
-                    <div class="stat-number">4x / Year</div>
-                    <div class="stat-label">Built-In Repeat Rate</div>
-                    <p style="margin-top: 10px; font-size: 0.85rem;">Quarterly room and menu rotations give diners a constant reason to return.</p>
+                <div class="card">
+                    <h3 style="color: #ff9f43;">💰 High-Margin Upsell</h3>
+                    <p>Fixed RM 45 entry menu opens the door for high-margin signature drinks and room add-ons.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 3: The Guest Journey -->
+        <!-- SLIDE 3: Guest Flow -->
         <section class="slide">
-            <span class="badge">Guest Experience</span>
-            <h2>The 4-Step Dining Journey</h2>
-            <div class="grid-4">
+            <span class="badge">Customer Journey</span>
+            <h2>The 4-Step Dining Flow</h2>
+            <div class="grid grid-2">
                 <div class="card">
-                    <h3>1. Unbox</h3>
-                    <p>Guest pays RM 45 base entry and pulls a branded mystery capsule/box in the lobby.</p>
+                    <h3>1. Entrance & Unboxing</h3>
+                    <p>Guest buys RM 45 ticket at counter and opens a physical box/capsule revealing their room assignment.</p>
                 </div>
                 <div class="card">
-                    <h3>2. Reveal</h3>
-                    <p>Unboxing reveals assignment to 1 of 3 distinct themed dining rooms.</p>
+                    <h3>2. Room Entry</h3>
+                    <p>Escorted into 1 of 3 themed rooms featuring immersive soundscapes, scents, and lighting.</p>
                 </div>
                 <div class="card">
-                    <h3>3. Immerse</h3>
-                    <p>Escorted into an atmospheric room tailored with music, scent, and curated lighting.</p>
+                    <h3>3. Menu Choice</h3>
+                    <p>Selects 1 of 2 curated set meals included with the entry price.</p>
                 </div>
                 <div class="card">
-                    <h3>4. Dine & Upsell</h3>
-                    <p>Selects 1 of 2 set meals included in entry. Staff pushes high-margin drinks & desserts.</p>
+                    <h3>4. Add-on Upsell</h3>
+                    <p>Servers recommend themed cocktails, desserts, and extra side dishes to boost average spend.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 4: Room Themes & Modular Ambience -->
+        <!-- SLIDE 4: Interactive Room Themes -->
         <section class="slide">
-            <span class="badge">Atmosphere & Concept</span>
-            <h2>3 Themed Rooms (Quarterly Rotations)</h2>
-            <div class="grid-3">
+            <span class="badge">Atmosphere</span>
+            <h2>3 Immersive Rooms</h2>
+            <p class="subtitle">Tap below to preview room themes & visuals:</p>
+
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="switchTab(0)">🏮 Tokyo Izakaya</button>
+                <button class="tab-btn" onclick="switchTab(1)">🎷 Jazz Lounge</button>
+                <button class="tab-btn" onclick="switchTab(2)">🍜 Modern Kopitiam</button>
+            </div>
+
+            <div class="tab-content active" id="tab0">
                 <div class="card">
-                    <h3>Room A: Tokyo Izakaya</h3>
-                    <p>Neon accents, ambient Japanese alleyway soundscapes, robata skewers, and highball pairings.</p>
+                    <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Izakaya">
+                    <h3>Room 1: Tokyo Night Izakaya</h3>
+                    <p>Neon-lit, energetic ambient alleyway vibe serving yakitori skewers, ramen bowls, and highballs.</p>
                 </div>
+            </div>
+
+            <div class="tab-content" id="tab1">
                 <div class="card">
-                    <h3>Room B: Midnight Jazz</h3>
-                    <p>Dimly lit, warm amber lighting, smooth jazz audio, bistro sets, and craft mocktails/cocktails.</p>
+                    <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Jazz Lounge">
+                    <h3>Room 2: Midnight Jazz Club</h3>
+                    <p>Dimly lit amber ambiance, smooth jazz vinyl audio, smoked bistro platters, and craft cocktails.</p>
                 </div>
+            </div>
+
+            <div class="tab-content" id="tab2">
                 <div class="card">
-                    <h3>Room C: Modern Kopitiam</h3>
-                    <p>Nostalgic local aesthetic with elevated modern Malaysian comfort food and artisanal tea options.</p>
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Kopitiam">
+                    <h3>Room 3: Elevated Modern Kopitiam</h3>
+                    <p>Nostalgic local aesthetic with a sleek modern twist, serving artisanal noodle bowls and signature teas.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 5: Operational Risk & Mitigation -->
+        <!-- SLIDE 5: Flaws & Interactive Fixes -->
         <section class="slide">
-            <span class="badge">Operations Playbook</span>
+            <span class="badge">Operations Strategy</span>
             <h2>Solving Operational Hurdles</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <span class="flaw-tag">Flaw: Table Capacity Bottleneck</span>
-                    <p>Overcrowded popular rooms leaving other rooms empty.</p>
-                    <span class="solution-tag">Solution: Group Allocation & Trade Board</span>
-                    <p>1 box pull per group table matched to live digital system. Lobby Trade Board lets diners swap cards.</p>
+            <p class="subtitle">(Tap cards below to reveal operational solutions)</p>
+
+            <div class="grid grid-3">
+                <div class="card reveal-card" onclick="toggleSolution(this)">
+                    <span style="color: #ff7675; font-size: 0.75rem; font-weight:700;">FLAW 1</span>
+                    <h3>Capacity Overcrowding</h3>
+                    <p>What if everyone unboxes the same room?</p>
+                    <div class="solution-hidden">
+                        <strong>✔ Live Gacha System & Trade Board:</strong> 1 pull per table based on live system capacity + lobby trading board.
+                    </div>
                 </div>
-                <div class="card">
-                    <span class="flaw-tag">Flaw: Kitchen Complexity</span>
-                    <p>Cooking 3 different cuisines creates huge kitchen overhead.</p>
-                    <span class="solution-tag">Solution: Shared Ingredient Line</span>
-                    <p>Shared core proteins/carbs across all rooms, differentiated by room-specific sauces & plating.</p>
+
+                <div class="card reveal-card" onclick="toggleSolution(this)">
+                    <span style="color: #ff7675; font-size: 0.75rem; font-weight:700;">FLAW 2</span>
+                    <h3>Kitchen Overload</h3>
+                    <p>3 completely different cuisines overhead.</p>
+                    <div class="solution-hidden">
+                        <strong>✔ Shared Ingredient Prep:</strong> Same core chicken/fish/carbs, differentiated by sauces & plating.
+                    </div>
                 </div>
-                <div class="card">
-                    <span class="flaw-tag">Flaw: High Renovation Costs</span>
-                    <p>Quarterly room rebuilds eat away at profit margins.</p>
-                    <span class="solution-tag">Solution: Modular Ambience</span>
-                    <p>Smart lighting, projection mapping, soundscapes, and interchangeable table decor replace physical builds.</p>
+
+                <div class="card reveal-card" onclick="toggleSolution(this)">
+                    <span style="color: #ff7675; font-size: 0.75rem; font-weight:700;">FLAW 3</span>
+                    <h3>Renovation Costs</h3>
+                    <p>High cost to rebuild rooms quarterly.</p>
+                    <div class="solution-hidden">
+                        <strong>✔ Modular Ambience:</strong> RGB smart lighting, projection mapping & decor accessories swap overnight.
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 6: Financial Projections & Economics -->
+        <!-- SLIDE 6: Financials & Live Calculator -->
         <section class="slide">
-            <span class="badge">Financial Strategy</span>
-            <h2>Unit Economics & Margin Target</h2>
-            <div class="grid-2">
+            <span class="badge">Financial Model</span>
+            <h2>Unit Economics & Live Calculator</h2>
+
+            <div class="calc-box">
+                <h3 style="color: #00f2fe; margin-bottom: 10px;">Group Revenue Estimator</h3>
+                <label style="font-size: 0.85rem; color: #cbd5e1;">Select Group / Table Size:</label>
+                <input type="range" min="1" max="10" value="4" class="slider-input" id="paxSlider" oninput="updateCalc()">
+                
+                <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                    <span>Diners: <strong id="paxVal" style="color: #ff007f;">4 Pax</strong></span>
+                    <span>Base Set Revenue: <strong id="baseRev" style="color: #00f2fe;">RM 180.00</strong></span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.85rem; color: #94a3b8;">
+                    <span>Est. Bill incl. 1.16 Tax/Service Multiplier:</span>
+                    <strong id="taxRev" style="color: #ff9f43;">RM 208.80</strong>
+                </div>
+            </div>
+
+            <div class="grid grid-2" style="margin-top: 15px;">
                 <div class="card">
-                    <h3>Base Set Revenue</h3>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 8px;">• <strong>Base Set Price:</strong> RM 45.00 net per head</li>
-                        <li style="margin-bottom: 8px;">• <strong>Final Bill Target:</strong> ~RM 52.20 (applying standard 1.16 multiplier for service charge & taxes)</li>
-                        <li style="margin-bottom: 8px;">• <strong>Target Food Cost:</strong> Keep base ingredients under 30% (~RM 13.50) via standardized core prep</li>
-                    </ul>
+                    <h3>Target Food Cost</h3>
+                    <p>Keep raw ingredient cost strictly at <strong>28% - 30% (~RM 13.50/set)</strong> through standardized prep lines.</p>
                 </div>
                 <div class="card">
-                    <h3>Upsell Engine (High Margin)</h3>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 8px;">• <strong>Themed Signature Drinks:</strong> RM 15 - 22 (Mocktails / Cocktails)</li>
-                        <li style="margin-bottom: 8px;">• <strong>Theme Add-on Desserts:</strong> RM 12 - 18</li>
-                        <li style="margin-bottom: 8px;">• <strong>Target Avg Spend / Pax:</strong> <strong>RM 65.00+</strong> (significantly boosting net profitability)</li>
-                    </ul>
+                    <h3>Upsell Target</h3>
+                    <p>Train servers to push drinks & desserts to elevate average head spend to <strong>RM 65.00+</strong>.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 7: Roadmap & Next Steps -->
+        <!-- SLIDE 7: Roadmap -->
         <section class="slide">
-            <span class="badge">Next Steps</span>
-            <h2>Execution Roadmap</h2>
-            <div class="grid-3" style="margin-bottom: 20px;">
+            <span class="badge">Execution</span>
+            <h2>Launch Roadmap</h2>
+            <div class="grid grid-3">
                 <div class="card">
-                    <h3>Phase 1: Pop-Up Proof</h3>
-                    <p>Run a 2-day pop-up dining trial to validate capacity flow, unboxing mechanic, and set menu reception.</p>
+                    <h3 style="color: #ff007f;">Phase 1</h3>
+                    <p><strong>Proof of Concept Pop-Up</strong><br>Run a 2-day pop-up trial to test the unboxing flow and menu speed.</p>
                 </div>
                 <div class="card">
-                    <h3>Phase 2: Location & Fit-out</h3>
-                    <p>Secure a 3-room layout venue and install modular lighting, sound, and projection systems.</p>
+                    <h3 style="color: #00f2fe;">Phase 2</h3>
+                    <p><strong>Venue & Modular Setup</strong><br>Fit out 3 modular rooms with projection and smart audio/lighting.</p>
                 </div>
                 <div class="card">
-                    <h3>Phase 3: Grand Launch</h3>
-                    <p>Roll out official launch campaign with local food influencers and mystery unboxing teasers.</p>
+                    <h3 style="color: #ff9f43;">Phase 3</h3>
+                    <p><strong>Grand Influencer Launch</strong><br>Partner with local food creators for unboxing teaser reels.</p>
                 </div>
             </div>
-            <p style="font-weight: 600; color: #f3e5ab;">Let's bring this concept to life together.</p>
+            <p style="margin-top: 25px; font-weight: 700; color: #00f2fe;">Let's build this together!</p>
         </section>
 
     </div>
@@ -429,25 +468,56 @@
         const counter = document.getElementById('slideCounter');
         const totalSlides = 7;
 
-        function scrollNext() {
-            slider.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
-        }
+        function scrollNext() { slider.scrollBy({ left: window.innerWidth, behavior: 'smooth' }); }
+        function scrollPrev() { slider.scrollBy({ left: -window.innerWidth, behavior: 'smooth' }); }
 
-        function scrollPrev() {
-            slider.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
-        }
-
-        // Update slide counter on scroll
         slider.addEventListener('scroll', () => {
             const currentSlide = Math.round(slider.scrollLeft / window.innerWidth) + 1;
-            counter.innerText = `Slide ${currentSlide} of ${totalSlides}`;
+            counter.innerText = `${currentSlide} / ${totalSlides}`;
         });
 
-        // Keyboard arrow navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') scrollNext();
-            if (e.key === 'ArrowLeft') scrollPrev();
-        });
+        // Interactive Unbox Function
+        function triggerUnbox() {
+            const rooms = [
+                { name: "Tokyo Izakaya 🏮", color: "#ff007f" },
+                { name: "Midnight Jazz Lounge 🎷", color: "#00f2fe" },
+                { name: "Modern Kopitiam 🍜", color: "#ff9f43" }
+            ];
+            const randomRoom = rooms[Math.floor(Math.random() * rooms.length)];
+            document.getElementById('boxIcon').innerText = "🎉";
+            document.getElementById('boxText').innerText = `YOU UNBOXED: ${randomRoom.name}`;
+            document.getElementById('boxText').style.color = randomRoom.color;
+        }
+
+        // Room Tabs Function
+        function switchTab(index) {
+            document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+                btn.classList.toggle('active', i === index);
+            });
+            document.querySelectorAll('.tab-content').forEach((content, i) => {
+                content.classList.toggle('active', i === index);
+            });
+        }
+
+        // Reveal Flaw Solutions
+        function toggleSolution(card) {
+            const sol = card.querySelector('.solution-hidden');
+            if (sol.style.display === "block") {
+                sol.style.display = "none";
+            } else {
+                sol.style.display = "block";
+            }
+        }
+
+        // Live Financial Calculator
+        function updateCalc() {
+            const pax = document.getElementById('paxSlider').value;
+            const base = pax * 45;
+            const totalWithTax = (base * 1.16).toFixed(2);
+            document.getElementById('paxVal').innerText = `${pax} Pax`;
+            document.getElementById('baseRev').innerText = `RM ${base.toFixed(2)}`;
+            document.getElementById('taxRev').innerText = `RM ${totalWithTax}`;
+        }
     </script>
 </body>
 </html>
